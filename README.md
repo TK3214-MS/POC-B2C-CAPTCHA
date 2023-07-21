@@ -7,13 +7,18 @@
 - Azure Functions による Google reCAPTCHA へのトークン Validation
 
 Azure AD B2C と連携した Web アプリシナリオのセキュリティ強化にお役立て頂けますと幸いです。
-## デモLIVEサイト
-Azure AD B2C 認証付きの Single Page Application に加え、API Management 経由で API として動作する Azure Functions がユーザーオペレーションにより Azure SQL Database にテキスト挿入してくれるあるあるシナリオです。
-ライブデモサイトを2023年6月末まで期間限定で公開中です。
 
-[デモライブサイト](https://brave-grass-055a2a000.3.azurestaticapps.net)
+Azure AD B2C カスタムポリシーを利用したGoogle reCAPTCHA の Azure AD B2C サインインへの統合がお試し頂けるデモサイトをご確認頂けます。
 
-![Architecture](https://github.com/TK3214-MS/POC-AUTH/assets/89323076/32e84fc2-d2d7-4599-a852-55a11b07672b)
+[デモライブサイト](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_Captcha_signin&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms&scope=openid&response_type=id_token&prompt=login)
+
+![Architecture](![Architecture](https://github.com/TK3214-MS/POC-B2C-CAPTCHA/assets/89323076/208ce21b-8407-42d2-a637-b427074f29a6))
+
+1. ユーザーが Web アプリ上で Azure AD B2C サインイン試行を実施
+2. Azure AD B2C に認証要求をリダイレクト
+3. カスタムポリシーで定義された API エンドポイント (Azure Function) を呼び出し
+4. Google reCAPTCHA にユーザー認証チャレンジ情報を送信し、正当性を評価
+5. 認証チャレンジが正当なものの場合、サインイン成功応答をユーザーに返却
 
 ## 事前準備
 ### 1. Azure AD B2C テナントの作成

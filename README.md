@@ -108,7 +108,8 @@ Google reCAPTCHA にサインアップし、新しいサイトを"チャレン�
 }
 ```
 
-## カスタムポリシー展開
+## 展開作業
+### カスタムポリシー展開
 編集したカスタムポリシーを Azure AD B2C にアップロードします。
 
 - Signin.xml
@@ -116,12 +117,12 @@ Google reCAPTCHA にサインアップし、新しいサイトを"チャレン�
 
 [ポリシーのアップロード](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows?pivots=b2c-custom-policy#upload-the-policies)
 
-## Azure Function アプリの展開
+### Azure Function アプリの展開
 以下手順に従って Azure Function アプリの作成、ソースコードのアップロードを行います。
 
 [Visual Studio Code を仕様して Azure Functions を開発する](https://learn.microsoft.com/ja-jp/azure/azure-functions/functions-develop-vs-code?tabs=csharp)
 
-## カスタムページ要素のホスティング
+### カスタムページ要素のホスティング
 Azure Storage Account を作成し、Blob 内でコンテナを作成しHTMLファイルをアップロードします。
 
 この際、Sign in Page/customCaptcha.html で設定したストレージアカウント名と共通名を設定して下さい。

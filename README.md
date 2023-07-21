@@ -12,7 +12,7 @@ Azure AD B2C カスタムポリシーを利用したGoogle reCAPTCHA の Azure A
 
 [デモライブサイト](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_Captcha_signin&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms&scope=openid&response_type=id_token&prompt=login)
 
-![Architecture](https://github.com/TK3214-MS/POC-B2C-CAPTCHA/assets/89323076/f72a83b6-535c-465b-88c2-1947b755c6f2)
+![Architecture](https://github.com/TK3214-MS/POC-B2C-CAPTCHA/assets/89323076/b437c5b4-ab60-458b-a5ab-3cd0805385f2)
 
 1. ユーザーが Web アプリ上で Azure AD B2C サインイン試行を実施
 2. Azure AD B2C に認証要求をリダイレクト

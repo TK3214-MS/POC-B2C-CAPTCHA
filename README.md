@@ -54,6 +54,33 @@ Google reCAPTCHA にサインアップし、新しいサイトを"チャレン�
 <div id="forgotpass"> <a href="https://<Azure AD B2C ドメイン名>.b2clogin.com/<Azure AD B2C ドメイン名>.onmicrosoft.com/oauth2/v2.0/authorize?p=<パスワードリセット用ポリシー名>&client_id=<Identity Experience Framework アプリケーションのアプリケーション ID>&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login">Forgot my password</a>
 </div>
 ```
+- Policy/Captcha_TrustFrameworkExtensions.xml
+```
+<BasePolicy>
+ <TenantId><Azure AD B2C ドメイン名>.onmicrosoft.com</TenantId>
+ <PolicyId>B2C_1A_TrustFrameworkExtensions</PolicyId>
+</BasePolicy>
+---
+<ContentDefinition Id="api.signuporsignin">
+ <LoadUri>https://<ストレージアカウント名>.blob.core.windows.net/<コンテナ名>/customCaptcha.html</LoadUri>
+</ContentDefinition>
+
+
+<ContentDefinition Id="api.selfasserted">
+ <LoadUri>https://<ストレージアカウント名>.blob.core.windows.net/<コンテナ名>/customCaptcha.html</LoadUri>
+</ContentDefinition>
+---
+<Metadata>
+ <Item Key="ServiceUrl">https://<Azure Function アプリ名>.azurewebsites.net/api/identity</Item>
+ <Item Key="AuthenticationType">None</Item>
+ <Item Key="SendClaimsIn">Body</Item>
+ <!-- JSON, Form, Header, and Query String formats supported -->
+ <Item Key="ClaimsFormat">Body</Item>
+ <!-- Defines format to expect claims returning to B2C -->
+ <!-- REMOVE the following line in production environments -->
+ <Item Key="AllowInsecureAuthInProduction">true</Item>
+</Metadata>
+```
 
 ## リソース展開
 以下ボタンをクリック頂くとお持ちの Azure サブスクリプションにリソースが自動作成されます。

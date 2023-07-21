@@ -86,6 +86,18 @@ Google reCAPTCHA にサインアップし、新しいサイトを"チャレン�
 </Metadata>
 ```
 
+- Policy/Signin.xml
+```
+<TrustFrameworkPolicy
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
+  PolicySchemaVersion="0.3.0.0"
+  TenantId="<Azure AD B2C ドメイン名>.onmicrosoft.com"
+  PolicyId="B2C_1A_Captcha_signin"
+  PublicPolicyUri="http://6157010b2cpoc.onmicrosoft.com/B2C_1A_Captcha_signin">
+```
+
 ## リソース展開
 以下ボタンをクリック頂くとお持ちの Azure サブスクリプションにリソースが自動作成されます。
 

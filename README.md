@@ -26,22 +26,33 @@ Azure AD B2C カスタムポリシーを利用したGoogle reCAPTCHA の Azure A
 
 [Azure AD B2C テナントを作成する](https://learn.microsoft.com/ja-jp/azure/active-directory-b2c/tutorial-create-tenant#create-an-azure-ad-b2c-tenant)
 
-### 2. サインアップ／サインインポリシーの作成
-サインアップとサインインユーザーフローを作成します。
+### 2. Google reCAPTCHA 
+Google reCAPTCHA にサインアップし、新しいサイトを"チャレンジ(v2)"タイプで登録します。
 
-[サインアップとサインインユーザーフローを作成する](https://learn.microsoft.com/ja-jp/azure/active-directory-b2c/add-sign-up-and-sign-in-policy?pivots=b2c-user-flow)
+[Google reCAPTCHA](https://www.google.com/recaptcha/admin/create)
 
-### 3. B2C テナントへの Azure AD アプリケーション登録
-#### 3-1. Web API 用アプリケーションの登録
-Web API 用アプリケーションを登録し、APIスコープを構成します。
+登録ウィザードで以下構成を行います。
 
-[Web API アプリケーションを登録する](https://learn.microsoft.com/ja-jp/azure/active-directory-b2c/configure-authentication-sample-spa-app#step-21-register-the-web-api-application)
-[スコープを構成する](https://learn.microsoft.com/ja-jp/azure/active-directory-b2c/configure-authentication-sample-spa-app#step-22-configure-scopes)
+- ドメイン : Azure AD B2C ドメイン (xxx.b2clogin.com) を設定して下さい。
+- reCAPTCHA ソリューションの入手元を検証する : チェックボックスをオフにする。
 
-#### 3-2. SPA 用アプリケーションの登録
-SPA 用アプリケーションを登録します。
+### 3. Azure AD B2C カスタムポリシーを利用する為の環境準備
 
-[SPA を登録する](https://learn.microsoft.com/ja-jp/azure/active-directory-b2c/configure-authentication-sample-spa-app#step-23-register-the-spa)
+必要なアプリケーション登録、スターターパックのアップロードを行います。
+
+[環境を準備する](https://learn.microsoft.com/ja-jp/azure/active-directory-b2c/custom-policy-overview#prepare-your-environment)
+
+### 4. 環境値の設定
+
+適切なファイルに必要な設定値を設定します。
+
+- Sign in Page/customCaptcha.html
+'''
+<div class="g-recaptcha" data-callback="on_captcha_filled" data-sitekey="<Google reCAPTCA で登録したサイトキー値>"></div>
+<br><div id="signup">
+<a href="https://<Azure AD B2C ドメイン名>.b2clogin.com/<Azure AD B2C ドメイン名>.onmicrosoft.com/oauth2/v2.0/authorize?p=<サインアップ用ポリシー名>&client_id=<Identity Experience Framework アプリケーションのアプリケーション ID>&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login">Sign Up</a></div><br>
+<div id="forgotpass"> <a href="https://<Azure AD B2C ドメイン名>.b2clogin.com/<Azure AD B2C ドメイン名>.onmicrosoft.com/oauth2/v2.0/authorize?p=<パスワードリセット用ポリシー名>&client_id=<Identity Experience Framework アプリケーションのアプリケーション ID>&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login">Forgot my password</a>
+</div>
 
 ## リソース展開
 以下ボタンをクリック頂くとお持ちの Azure サブスクリプションにリソースが自動作成されます。

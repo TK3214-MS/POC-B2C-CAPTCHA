@@ -60,7 +60,9 @@ Google reCAPTCHA にサインアップし、新しいサイトを"チャレン�
  <TenantId><Azure AD B2C ドメイン名>.onmicrosoft.com</TenantId>
  <PolicyId>B2C_1A_TrustFrameworkExtensions</PolicyId>
 </BasePolicy>
+
 ---
+
 <ContentDefinition Id="api.signuporsignin">
  <LoadUri>https://<ストレージアカウント名>.blob.core.windows.net/<コンテナ名>/customCaptcha.html</LoadUri>
 </ContentDefinition>
@@ -69,7 +71,9 @@ Google reCAPTCHA にサインアップし、新しいサイトを"チャレン�
 <ContentDefinition Id="api.selfasserted">
  <LoadUri>https://<ストレージアカウント名>.blob.core.windows.net/<コンテナ名>/customCaptcha.html</LoadUri>
 </ContentDefinition>
+
 ---
+
 <Metadata>
  <Item Key="ServiceUrl">https://<Azure Function アプリ名>.azurewebsites.net/api/identity</Item>
  <Item Key="AuthenticationType">None</Item>

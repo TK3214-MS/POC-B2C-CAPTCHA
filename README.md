@@ -47,12 +47,13 @@ Google reCAPTCHA にサインアップし、新しいサイトを"チャレン�
 適切なファイルに必要な設定値を設定します。
 
 - Sign in Page/customCaptcha.html
-'''
+```
 <div class="g-recaptcha" data-callback="on_captcha_filled" data-sitekey="<Google reCAPTCA で登録したサイトキー値>"></div>
 <br><div id="signup">
 <a href="https://<Azure AD B2C ドメイン名>.b2clogin.com/<Azure AD B2C ドメイン名>.onmicrosoft.com/oauth2/v2.0/authorize?p=<サインアップ用ポリシー名>&client_id=<Identity Experience Framework アプリケーションのアプリケーション ID>&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login">Sign Up</a></div><br>
 <div id="forgotpass"> <a href="https://<Azure AD B2C ドメイン名>.b2clogin.com/<Azure AD B2C ドメイン名>.onmicrosoft.com/oauth2/v2.0/authorize?p=<パスワードリセット用ポリシー名>&client_id=<Identity Experience Framework アプリケーションのアプリケーション ID>&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login">Forgot my password</a>
 </div>
+```
 
 ## リソース展開
 以下ボタンをクリック頂くとお持ちの Azure サブスクリプションにリソースが自動作成されます。

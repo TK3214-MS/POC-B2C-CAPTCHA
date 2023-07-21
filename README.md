@@ -5,6 +5,7 @@
 - Azure AD B2C カスタムサインインページ用 HTML ソース
 - Google reCAPTCHA
 - Azure Functions による Google reCAPTCHA へのトークン Validation
+Azure AD B2C と連携した Web アプリシナリオのセキュリティ強化にお役立て頂けますと幸いです。
 ## デモLIVEサイト
 Azure AD B2C 認証付きの Single Page Application に加え、API Management 経由で API として動作する Azure Functions がユーザーオペレーションにより Azure SQL Database にテキスト挿入してくれるあるあるシナリオです。
 ライブデモサイトを2023年6月末まで期間限定で公開中です。

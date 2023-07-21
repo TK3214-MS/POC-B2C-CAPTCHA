@@ -1,0 +1,6 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "B2C_Recaptcha_Secret": "<Google reCAPTCHA シークレット>"
+  }
+}
